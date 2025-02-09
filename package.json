@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "@netlify/functions": "^3.0.0",
+    "@types/express": "^5.0.0",
+    "express": "^4.21.2",
+    "serverless-http": "^3.2.0",
+    "socket.io": "^4.8.1"
+  }
+}
