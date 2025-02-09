@@ -14,7 +14,7 @@ const PORT = 3000;
 const usersPasswords = {
     Jangdoyeul: "aa120305##",
     Woneunsup: "1234!!",
-    Limsiu: "urmotherfucker2147483647"
+    Limsiu: "nobugsanymore"
 };
 
 
