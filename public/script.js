@@ -1,3 +1,4 @@
+
 const socket = io();
 
 // 새로고침해도 비밀번호 & 라디오 버튼 선택 유지
@@ -22,7 +23,7 @@ function sendData() {
     const userValue = user.value;
     if ((userValue === "Jangdoyeul" && password !== "aa120305##") ||
         (userValue === "Woneunsup" && password !== "1234!!") ||
-        (userValue === "Limsiu" && password !== "urmotherfucker2147483647")) {
+        (userValue === "Limsiu" && password !== "nobugsanymore")) {
         alert("비밀번호가 올바르지 않습니다!");
         return;
     }
