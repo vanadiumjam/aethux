@@ -2,7 +2,9 @@ const express = require("express");
 const fs = require("fs");
 const path = require("path");
 const http = require("http");
-const { Server } = require("socket.io");
+const {
+    Server
+} = require("socket.io");
 
 const app = express();
 const server = http.createServer(app);
@@ -86,12 +88,19 @@ io.on("connection", (socket) => {
         if (usersPasswords[user] === password) {
             // 비밀번호가 맞으면 메시지 삭제
             messages.splice(messageIndex, 1); // 메시지 삭제
+
+            // 파일에 변경 사항 저장
+            try {
+                fs.writeFileSync("data.txt", JSON.stringify(messages, null, 2), "utf8");
+            } catch (error) {
+                console.error("파일 저장 오류:", error);
+            }
+
             io.emit("updateData", messages); // 삭제된 후 클라이언트에 업데이트 전송
         } else {
             socket.emit("error", "비밀번호가 틀렸습니다!");
         }
     });
-
     socket.on("disconnect", () => {
         console.log("사용자가 나갔습니다.");
     });
